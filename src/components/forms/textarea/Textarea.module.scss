@@ -1,0 +1,7 @@
+textarea{
+  overflow: auto;
+  resize: vertical;
+  &.formControl{
+    height: auto;
+  }
+}

@@ -1,0 +1,21 @@
+@import "../../../styles/mixins/grid";
+
+.dialog{
+  @include display-grid();
+  @include grid-template-columns(auto 1fr, 0px);
+  @include grid-template-rows(auto, 0px);
+  .item{
+    @include grid-child(1,1,1,1);
+  }
+  .messages{
+    @include grid-child(2,2,1,1);
+    .message{
+      .my{
+        color: white;
+      }
+    }
+  }
+  .sendMessage{
+
+  }
+}

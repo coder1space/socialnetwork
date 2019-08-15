@@ -1,0 +1,39 @@
+@import "../../styles/mixins/grid";
+
+.messages{
+  //width: 70%;
+  .dialog{
+    @include display-grid();
+    @include grid-template-columns(150px 1fr, 15px);
+    @include grid-template-rows(auto, 0px);
+    .contact{
+      @include grid-child(1,1,1,1);
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .messages{
+      @include grid-child(2,2,1,1);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      .message{
+        position: relative;
+        border-radius: 20px;
+        padding: 8px 15px;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        display: inline-block;
+        background-color: #1e88e5;
+        color: white;
+        &:not(:last-child){
+          margin-bottom: 3px !important;
+        }
+        &.mine{
+          background-color: white;
+          color: #1e88e5;
+          margin: 0 0 0 auto;
+        }
+      }
+    }
+  }
+}

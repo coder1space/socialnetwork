@@ -1,0 +1,28 @@
+@import "../../styles/mixins/grid";
+@import "../../styles/mixins/flexbox";
+
+.posts{
+  width: 70%;
+  .post{
+    @include display-grid();
+    @include grid-template-columns(auto 1fr 20px, 50px);
+    @include grid-template-rows(auto, 0px);
+    line-height: 18px;
+    margin-bottom: 20px;
+    .userAvatar{
+      @include grid-child(1, 1, 1, 1);
+      img{
+        width: 40px;
+      }
+    }
+    .text{
+      @include grid-child(2, 2, 1, 1);
+    }
+    .likes{
+      @include grid-child(3, 3, 1, 1);
+      @include flexbox();
+      @include justify-content(flex-end);
+      @include align-items(flex-start);
+    }
+  }
+}
